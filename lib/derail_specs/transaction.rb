@@ -1,5 +1,5 @@
 module DerailSpecs
-  class Transactions
+  class Transaction
     def self.instance
       @instance ||= new
     end
@@ -16,7 +16,7 @@ module DerailSpecs
       end
 
       # When connections are established in the future, begin a transaction too
-      @connection_subscriber = ActiveSupport::Notifications.subscribe("!connection.active_record") { |_, _, _, _, payload|
+      @connection_subscriber = ActiveSupport::Notifications.subscribe("!connection.active_record") do |_, _, _, _, payload|
         if payload.key?(:spec_name) && (spec_name = payload[:spec_name])
           setup_shared_connection_pool
 
@@ -32,7 +32,7 @@ module DerailSpecs
             @connections << connection
           end
         end
-      }
+      end
     end
 
     def self.rollback
@@ -51,6 +51,15 @@ module DerailSpecs
       @connections.clear
 
       ActiveRecord::Base.clear_active_connections!
+    end
+
+    def self.reset
+      instance.reset
+    end
+
+    def reset
+      rollback
+      self.begin
     end
 
     def gather_connections

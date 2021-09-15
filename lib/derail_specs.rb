@@ -15,4 +15,4 @@ module DerailSpecs
 end
 
 require 'derail_specs/boot'
-require 'derail_specs/transactions'
+require 'derail_specs/transaction'
