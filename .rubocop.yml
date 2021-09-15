@@ -5,3 +5,6 @@ Style/StringLiterals:
 
 AllCops:                                                     
   NewCops: enable
+
+Style/Documentation:
+  Enabled: false
