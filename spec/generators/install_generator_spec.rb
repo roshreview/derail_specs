@@ -10,7 +10,7 @@ RSpec.describe DerailSpecs::Generators::InstallGenerator, type: :generator do
     run_generator
   end
 
-  it do
+  it 'creates a derails_specs initializer' do
     assert_file 'config/initializers/derail_specs.rb'
   end
 end
