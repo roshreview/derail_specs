@@ -13,3 +13,6 @@ module DerailSpecs
     yield(configuration)
   end
 end
+
+require 'derail_specs/boot'
+require 'derail_specs/transactions'
