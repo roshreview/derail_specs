@@ -1,8 +1,11 @@
+require_relative 'server'
+
 module DerailSpecs
   class Boot
     def run
       Transaction.begin
       set_exit_hooks!
+      Server.new.tap(&:boot)
     end
 
     private
