@@ -5,7 +5,12 @@ module DerailSpecs
     def run
       Transaction.begin
       set_exit_hooks!
+
       Server.new.tap(&:boot)
+
+      puts "Starting Tests…"
+
+      system DerailSpecs.configuration.test_command
     end
 
     private
