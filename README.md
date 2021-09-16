@@ -63,6 +63,29 @@ beforeEach(async () => {
   });
 ```
 
+### FactoryBot.create
+
+Post with a JSON array to `/factory-bot/create` with the following structure:
+
+```JSON
+["test", { "name": "Test Name", "created_at": "2011-11-11 11:11:11" }]
+````
+
+which will run:
+
+```ruby
+FactoryBot.create(:test, name: "Test Name", created_at: "2011-11-11 11:11:11")
+```
+
+Example curl:
+
+```bash
+curl -X POST \
+      -d '["test", { "name": "Test Name from Curl", "created_at": "2011-11-11 11:11:11" }]' \
+      -H 'Content-Type: application/json' \
+      127.0.0.1:3001/factory-bot/create
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

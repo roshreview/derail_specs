@@ -11,5 +11,6 @@ gem 'sqlite3', '~> 1.4'
 
 group :development, :test do
   gem "derail_specs", path: '..'
+  gem 'factory_bot_rails'
   gem 'pry-rails'
 end
