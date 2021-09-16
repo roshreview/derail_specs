@@ -1,8 +1,11 @@
 # DerailSpecs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/derail_specs`. To experiment with that code, run `bin/console` for an interactive prompt.
+DerailSpecs is a simple gem that makes it easy to write integration specs outside
+of the rails environment (derailed).
 
-TODO: Delete this and the text above, and describe your gem
+DerailsSpecs boots puma and provides a GET route (`/reset-transaction`) in which
+rollbacks your transaction and begins a new transaction for the next test.
+At the end of the test suite, it rollbacks the final transaction.
 
 ## Installation
 
@@ -20,9 +23,33 @@ Or install it yourself as:
 
     $ gem install derail_specs
 
+To install the initializer, run:
+
+    $ rails g derail_specs:install
+
+Then modify the configuration file located at config/initializers/derail_specs.rb
+to include your test command:
+
+```ruby
+DerailSpecs.configure do |config|
+  config.command = './tests.sh' # <-- your test command here
+  config.host = '127.0.0.1'
+  config.port = 3001
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+To run tests, run
+
+    $ rails derail_specs:run
+
+Inside your preferred test suite, configure a before_each that runs a get request
+to `HOST:PORT/reset-transaction`.
+
+For instance, with curl and the default config, transactions can be reset with:
+
+    $ curl 127.0.0.1:3001/reset-transaction
 
 ## Development
 
