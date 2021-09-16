@@ -5,6 +5,7 @@ AllCops:
   Exclude:
     - 'example/db/schema.rb'
     - 'example/bin/*'
+    - 'vendor/**/*'
 
 Style/StringLiterals:
   Enabled: false
