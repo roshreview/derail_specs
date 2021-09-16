@@ -1,6 +1,10 @@
 ## [Unreleased]
 
 
+## [0.4.0] - 2021-09-16
+
+- Add infinite server mode, which can be used by not setting a command in the config
+-
 ## [0.3.0] - 2021-09-16
 
 - Add `/factory-bot/create` route to map to FactoryBot.create
