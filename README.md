@@ -44,12 +44,24 @@ To run tests, run
 
     $ rails derail_specs:run
 
+### Reset Transaction
+
 Inside your preferred test suite, configure a before_each that runs a get request
 to `HOST:PORT/reset-transaction`.
+
+This runs a rollback and begins a new transaction.
 
 For instance, with curl and the default config, transactions can be reset with:
 
     $ curl 127.0.0.1:3001/reset-transaction
+
+Or if you're using [detox](https://github.com/wix/Detox):
+
+```javascript
+beforeEach(async () => {
+    await fetch('127.0.0.1:3001/reset-transaction');
+  });
+```
 
 ## Development
 
