@@ -2,6 +2,7 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 3.0
   Exclude:
     - 'example/db/schema.rb'
     - 'example/bin/*'
