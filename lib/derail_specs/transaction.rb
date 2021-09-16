@@ -63,7 +63,7 @@ module DerailSpecs
     end
 
     def gather_connections
-      setup_shared_connection_pool
+      setup_shared_connection_pool if ActiveRecord::VERSION::MAJOR >= 6
 
       ActiveRecord::Base.connection_handler.connection_pool_list.map(&:connection)
     end
