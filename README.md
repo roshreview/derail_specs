@@ -38,6 +38,12 @@ DerailSpecs.configure do |config|
 end
 ```
 
+Alternatively, if you don't set a `config.command`, the server will boot in
+*infinite* mode and will not stop until receiving an INT signal (IE Ctrl+c).
+This is good for when your test command isn't available in a rails context,
+like when you are running rails in docker, but have a test application running
+on the host machine.
+
 ## Usage
 
 To run tests, run

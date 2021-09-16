@@ -10,10 +10,19 @@ module DerailSpecs
 
       puts "Starting Tests…"
 
-      system DerailSpecs.configuration.command
+      if command.present?
+        puts "Run: #{command}"
+        system command
+      else
+        loop { sleep 60 }
+      end
     end
 
     private
+
+    def command
+      DerailSpecs.configuration.command
+    end
 
     def set_exit_hooks!
       at_exit do
