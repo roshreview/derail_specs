@@ -7,6 +7,14 @@ module DerailSpecs
           [202, { "Content-Type" => "text/plain" }, ["Accepted"]]
         }
       end
+      map "/factory-bot/create" do
+        run lambda { |env|
+          body = Rack::Request.new(env).body.gets
+          object = FactoryBot.create(*JSON.parse(body))
+
+          [202, { "Content-Type" => "application/json" }, [object.to_json]]
+        }
+      end
       map "/" do
         run Rails.application
       end

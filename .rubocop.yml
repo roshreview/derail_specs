@@ -1,10 +1,14 @@
 inherit_from: .rubocop_todo.yml
 
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'example/db/schema.rb'
+    - 'example/bin/*'
+
 Style/StringLiterals:
   Enabled: false
 
-AllCops:                                                     
-  NewCops: enable
 
 Style/Documentation:
   Enabled: false
