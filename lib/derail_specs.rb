@@ -21,3 +21,4 @@ end
 
 require 'derail_specs/boot'
 require 'derail_specs/transaction'
+require 'derail_specs/railtie'
