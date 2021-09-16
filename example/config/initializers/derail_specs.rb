@@ -1,3 +1,3 @@
 DerailSpecs.configure do |config|
-  config.test_command = './tests.sh'
+  config.command = './tests.sh'
 end

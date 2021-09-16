@@ -10,7 +10,7 @@ module DerailSpecs
 
       puts "Starting Tests…"
 
-      system DerailSpecs.configuration.test_command
+      system DerailSpecs.configuration.command
     end
 
     private

@@ -7,7 +7,7 @@ module DerailSpecs
 
   def self.configuration
     @configuration ||= Struct
-                       .new(:test_command, :host, :port, keyword_init: true)
+                       .new(:command, :host, :port, keyword_init: true)
                        .new(
                          host: '127.0.0.1',
                          port: 3001,
