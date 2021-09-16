@@ -61,6 +61,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/roshreview/derail_specs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/roshreview/derail_specs/blob/master/CODE_OF_CONDUCT.md).
 
+Big thanks to [testdouble/cypress-rails](https://github.com/testdouble/cypress-rails)
+to the puma server + transactions work they did for the cypress environment.
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
