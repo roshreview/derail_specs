@@ -97,7 +97,7 @@ curl -X POST \
 By default, DerailSpecs doesn't run any fixtures. You can configure global fixture
 loading with initializer hooks in `config/initializers/derail_specs.rb`:
 
-```
+```ruby
 return unless Rails.env.test?
 
 DerailSpecs.hooks.before_server_start do
