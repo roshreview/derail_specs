@@ -22,9 +22,8 @@ module DerailSpecs
 
     def run(name)
       return unless @hooks[name]
-      @hooks[name].each do |blk|
-        blk.call
-      end
+
+      @hooks[name].each(&:call)
     end
 
     private
@@ -39,4 +38,3 @@ module DerailSpecs
     end
   end
 end
-
