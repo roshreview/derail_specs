@@ -92,6 +92,33 @@ curl -X POST \
       127.0.0.1:3001/factory-bot/create
 ```
 
+### Initializer Hooks
+
+By default, DerailSpecs doesn't run any fixtures. You can configure global fixture
+loading with initializer hooks in `config/initializers/derail_specs.rb`:
+
+```
+return unless Rails.env.test?
+
+DerailSpecs.hooks.before_server_start do
+  # Add our fixtures before the resettable transaction is started
+  fixtures_dir = Rails.root.join("spec/fixtures")
+  fixture_files = Dir.glob(fixtures_dir.join("**/*.yml")).map do |f|
+    f[(fixtures_dir.to_s.size + 1)..-5]
+  end
+
+  @fixtures = ActiveRecord::FixtureSet.create_fixtures(
+    fixtures_dir,
+    fixture_files,
+  )
+end
+
+DerailSpecs.hooks.before_server_stop do
+  @fixtures.map(&:model_class).each(&:delete_all)
+end
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

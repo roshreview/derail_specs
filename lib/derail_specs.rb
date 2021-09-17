@@ -7,7 +7,12 @@ module DerailSpecs
 
   def self.configuration
     @configuration ||= Struct
-                       .new(:command, :host, :port, keyword_init: true)
+                       .new(
+                         :command,
+                         :host,
+                         :port,
+                         keyword_init: true,
+                       )
                        .new(
                          host: '127.0.0.1',
                          port: 3001,
@@ -23,3 +28,4 @@ require 'derail_specs/boot'
 require 'derail_specs/transaction'
 require 'derail_specs/railtie'
 require 'derail_specs/factory_bot'
+require 'derail_specs/initializer_hooks'

@@ -1,3 +1,5 @@
+return unless Rails.test.env?
+
 DerailSpecs.configure do |config|
   config.command = './tests.sh'
   config.host = '127.0.0.1'

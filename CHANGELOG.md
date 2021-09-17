@@ -1,6 +1,10 @@
 ## [Unreleased]
 
 
+## [0.5.0] - 2021-09-17
+
+- Add before_server_start and before_server_stop initializer hooks
+
 ## [0.4.0] - 2021-09-16
 
 - Add infinite server mode, which can be used by not setting a command in the config

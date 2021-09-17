@@ -3,12 +3,11 @@ require_relative 'server'
 module DerailSpecs
   class Boot
     def run
+      DerailSpecs.hooks.run(:before_server_start)
       Transaction.begin
       set_exit_hooks!
 
       Server.new.tap(&:boot)
-
-      puts "Starting Tests…"
 
       if command.present?
         puts "Run: #{command}"
@@ -27,6 +26,7 @@ module DerailSpecs
     def set_exit_hooks!
       at_exit do
         Transaction.rollback
+        DerailSpecs.hooks.run(:before_server_stop)
       end
       Signal.trap("INT") do
         puts "Exiting derail_specs…"
