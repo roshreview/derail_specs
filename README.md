@@ -32,7 +32,7 @@ to include your test command:
 
 ```ruby
 DerailSpecs.configure do |config|
-  config.command = './tests.sh' # <-- your test command here
+  config.command = './tests.sh' # <-- your test command here, or blank for infinite mode
   config.host = '127.0.0.1'
   config.port = 3001
 end
