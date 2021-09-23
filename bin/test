@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd $DIR/..
+pwd
+rake
+cd example
+bundle exec rails derail_specs:run
