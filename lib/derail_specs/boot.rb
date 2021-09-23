@@ -11,7 +11,7 @@ module DerailSpecs
 
       if command.present?
         puts "Run: #{command}"
-        system command
+        exit system(command)
       else
         loop { sleep 60 }
       end

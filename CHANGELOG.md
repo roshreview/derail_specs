@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Change exit status of `rails derail_specs:run` to match config.command exit status when command is provided
+
 ## [0.6.0] - 2021-09-23
 
 - Add /factory-bot/create-list to map to FactoryBot.create_list
