@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.6.0] - 2021-09-23
+
+- Add /factory-bot/create-list to map to FactoryBot.create_list
+
 ## [0.5.1] - 2021-09-23
 
 - Fixed a bug with Ruby 2.6 and Rails >= 6 where #bind_call (Ruby 2.7) was used instead of #bind#call

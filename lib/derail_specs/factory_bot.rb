@@ -7,6 +7,10 @@ begin
       def self.create(factory, options = nil)
         ::FactoryBot.create(factory, options)
       end
+
+      def self.create_list(factory, count, options = nil)
+        ::FactoryBot.create_list(factory, count, options)
+      end
     end
   end
 rescue Gem::LoadError

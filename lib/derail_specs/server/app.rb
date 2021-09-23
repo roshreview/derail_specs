@@ -15,6 +15,14 @@ module DerailSpecs
           [202, { "Content-Type" => "application/json" }, [object.to_json]]
         }
       end
+      map "/factory-bot/create-list" do
+        run lambda { |env|
+          body = Rack::Request.new(env).body.gets
+          object = FactoryBot.create_list(*JSON.parse(body))
+
+          [202, { "Content-Type" => "application/json" }, [object.to_json]]
+        }
+      end
       map "/" do
         run Rails.application
       end
