@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+## [0.5.1] - 2021-09-23
+
+- Fixed a bug with Ruby 2.6 and Rails >= 6 where #bind_call (Ruby 2.7) was used instead of #bind#call
 
 ## [0.5.0] - 2021-09-17
 
@@ -8,7 +11,7 @@
 ## [0.4.0] - 2021-09-16
 
 - Add infinite server mode, which can be used by not setting a command in the config
--
+
 ## [0.3.0] - 2021-09-16
 
 - Add `/factory-bot/create` route to map to FactoryBot.create
