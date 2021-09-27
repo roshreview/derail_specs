@@ -1,4 +1,4 @@
-return unless Rails.test.env?
+return unless Rails.env.test?
 
 DerailSpecs.configure do |config|
   config.command = './tests.sh' # <-- delete this line for infinite mode
