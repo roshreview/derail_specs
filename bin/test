@@ -6,6 +6,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd $DIR/..
 pwd
-rake
+bundle exec rake
 cd example
 bundle exec rails derail_specs:run
