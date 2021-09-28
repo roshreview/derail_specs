@@ -9,3 +9,6 @@
 
 # rspec failure tracking
 .rspec_status
+
+# we don't really care what versions we're on, we need to be flexible
+Gemfile.lock
