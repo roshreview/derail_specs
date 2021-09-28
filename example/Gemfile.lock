@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    derail_specs (0.6.0)
+    derail_specs (0.6.1)
       puma (>= 3.8.0)
       railties (>= 5.2.0)
 

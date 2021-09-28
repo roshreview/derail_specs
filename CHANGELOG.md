@@ -1,6 +1,9 @@
 ## [Unreleased]
 
+## [0.6.1] - 2021-09-27
+
 - Change exit status of `rails derail_specs:run` to match config.command exit status when command is provided
+- Fix template initializer Rails.env.test? typo (jasonfb, #4)
 
 ## [0.6.0] - 2021-09-23
 
