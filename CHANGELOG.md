@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.7.0] - 2021-10-20
+
+- Add support to mirror FactoryBot API including traits
+
 ## [0.6.1] - 2021-09-27
 
 - Change exit status of `rails derail_specs:run` to match config.command exit status when command is provided

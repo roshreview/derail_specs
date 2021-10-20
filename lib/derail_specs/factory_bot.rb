@@ -4,12 +4,13 @@ begin
 
   module DerailSpecs
     class FactoryBot
-      def self.create(factory, options = nil)
-        ::FactoryBot.create(factory, options)
+      def self.create(*args)
+        ::FactoryBot.create(*args)
       end
 
-      def self.create_list(factory, count, options = nil)
-        ::FactoryBot.create_list(factory, count, options)
+      def self.create_list(*args)
+        puts args.to_json
+        ::FactoryBot.create_list(*args)
       end
     end
   end
